@@ -1,0 +1,245 @@
+{
+  "project": "アース製薬 きき湯 × Vket 2026 Winter ブース（VRChat）体験モック",
+  "units": "メートル（three.js座標：Y上、-Zが奥。Unityに持ち込む場合はZを反転）",
+  "booth_bounds": {
+    "x": [
+      -18,
+      18
+    ],
+    "z": [
+      -13.4,
+      20
+    ],
+    "note": "見せ方優先の約36m×33m。Vketレギュレーションに合わせて縮尺調整"
+  },
+  "zones": {
+    "entrance": {
+      "pos": [
+        0,
+        20
+      ],
+      "desc": "きき湯ペディメント・大柱・看板塔（x=±16.4）"
+    },
+    "welcome_arch": {
+      "pos": [
+        0,
+        16.2
+      ],
+      "stamp": "welcome"
+    },
+    "main_pool": {
+      "center": [
+        0,
+        -4.5
+      ],
+      "radius": 5.2,
+      "water_y": 0.45,
+      "start_podium": [
+        0,
+        2.2
+      ],
+      "game_spot": [
+        0,
+        -5.2
+      ],
+      "mirror": {
+        "z": -9.95,
+        "width": 4.2,
+        "height": 5.7
+      }
+    },
+    "fineheat_room": {
+      "x": [
+        10.6,
+        17.9
+      ],
+      "z": [
+        -9.2,
+        3.2
+      ],
+      "start_podium": [
+        12.2,
+        -7.1
+      ],
+      "bathtub": [
+        15.1,
+        -3
+      ]
+    },
+    "gallery_wall": {
+      "posters_x": [
+        -8.6,
+        -5.4,
+        5.4,
+        8.6
+      ],
+      "video": [
+        -12.3,
+        -12.97
+      ],
+      "stamp": "learn（3つ見る）"
+    },
+    "campaign": {
+      "survey": [
+        -16.9,
+        -1.2
+      ],
+      "shop_shelf": [
+        -17.4,
+        5.2
+      ],
+      "photo_frame": [
+        -17,
+        10.8
+      ],
+      "stamp": "camp"
+    },
+    "exit": {
+      "pos": [
+        -14.25,
+        20
+      ],
+      "desc": "おみやげカード表示"
+    }
+  },
+  "route_order": [
+    "street",
+    "welcome",
+    "main",
+    "fine",
+    "learn",
+    "camp",
+    "exit"
+  ],
+  "main_game": {
+    "flow": [
+      "STARTの台をタッチ",
+      "Q1 お悩み（腰痛/肩こり/冷え性/肌荒れ）",
+      "Q2 遊んだ量（難易度 0.85/1.0/1.2）",
+      "おすすめのきき湯表示",
+      "同色のバブルガンを持つ",
+      "自分で歩いて鏡前の光る円へ",
+      "STARTボタン→3カウント",
+      "30秒チャレンジ",
+      "結果",
+      "炭酸水柱（3段階）+ きき湯ジングル40秒",
+      "自動撮影（俯瞰・両手を広げた笑顔）",
+      "写真パネル→SNS投稿文"
+    ],
+    "time_sec": 30,
+    "rock_hp": 3,
+    "fire_interval_sec": 0.11,
+    "spawn_interval_sec": "(1.05 - progress*0.45) / difficulty、後半45%以降は35%で2体同時",
+    "score": {
+      "break_falling": 180,
+      "break_stuck": 120,
+      "combo_bonus": "(combo-1)*20 最大+200、1.4秒以内で継続",
+      "no_rock_left_bonus": 500
+    },
+    "pillar_tiers": [
+      {
+        "max": 3000,
+        "name": "やさしい泉",
+        "float_m": 0.7
+      },
+      {
+        "max": 7000,
+        "name": "勢いよく湧く水柱",
+        "float_m": 1.4
+      },
+      {
+        "max": null,
+        "name": "空へ届く巨大水柱（羽）",
+        "float_m": 2.4
+      }
+    ],
+    "areas": {
+      "koshi": {
+        "label": "腰痛",
+        "product": "きき湯 マグネシウム炭酸湯",
+        "gun_color": "#25b98b",
+        "monster": "岩",
+        "attach": "腰・骨盤"
+      },
+      "kata": {
+        "label": "肩こり",
+        "product": "きき湯 カリウム芒硝炭酸湯",
+        "gun_color": "#f2c318",
+        "monster": "スライム",
+        "attach": "肩・首"
+      },
+      "hie": {
+        "label": "冷え性",
+        "product": "きき湯 食塩炭酸湯",
+        "gun_color": "#ff8a3d",
+        "monster": "氷の結晶",
+        "attach": "手・腕・太もも"
+      },
+      "hada": {
+        "label": "肌荒れ",
+        "product": "きき湯 クレイ重曹炭酸湯（詳細要確認）",
+        "gun_color": "#ef5fa2",
+        "monster": "乾いた葉",
+        "attach": "頬・首"
+      }
+    },
+    "photo_camera": "胸の高さの上方0.8m・前方0.85m、FOV60で見下ろし"
+  },
+  "fineheat_game": {
+    "flow": [
+      "台をタッチ",
+      "5枚のカードを3秒見せる",
+      "裏返す",
+      "お悩み看板5問（正解+100pt、カードは開いたまま）",
+      "最後の質問で自分の悩み",
+      "おすすめ表示",
+      "ツブを持つ→バスタブへ投げる（外れたら拾い直し）",
+      "お湯の色が変わる・泡",
+      "自分でバスタブに入る",
+      "セルフタイマー3秒→撮影"
+    ],
+    "products": [
+      {
+        "name": "スマートモデル",
+        "worry": "全身のだるさ",
+        "scent": "ホットシトラス"
+      },
+      {
+        "name": "ほぐしオフ",
+        "worry": "足腰の重だるさ",
+        "scent": "フレッシュハーブ"
+      },
+      {
+        "name": "リセットナイト",
+        "worry": "就寝前のリセット",
+        "scent": "ナイトフォレスト"
+      },
+      {
+        "name": "デジケア",
+        "worry": "首肩（デジタル姿勢）",
+        "scent": "ブルーベリー"
+      },
+      {
+        "name": "ディープリフレッシュ",
+        "worry": "週なかの疲れ",
+        "scent": "ウッディシトラス"
+      }
+    ]
+  },
+  "bgm": {
+    "street": "bgm_booth.mp3（音量40%）",
+    "booth": "bgm_booth.mp3",
+    "main_game": "bgm_game.mp3",
+    "fineheat": "bgm_fineheat.mp3",
+    "clear_jingle": "bgm_kikiyu.mp3（クリア時1回・最大40秒→元のBGMに戻る）",
+    "crossfade_sec": "約1秒"
+  },
+  "interaction": "すべてワールド空間のパネル＋ボタン。VRはコントローラーのレーザー＋トリガー、デスクトップはクリック。自動移動なし",
+  "stamps": [
+    "welcome",
+    "main",
+    "fine",
+    "learn",
+    "camp"
+  ]
+}
